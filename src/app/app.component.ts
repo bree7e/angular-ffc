@@ -7,8 +7,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'ng-ffc';
-  quantity = 10;
+  title = 'Custom form field control';
   tyapk: FormControl;
 
   ngOnInit(): void {
@@ -28,4 +27,7 @@ export class AppComponent implements OnInit {
     this.tyapk.valueChanges.subscribe(console.log);
   }
 
+  setValue(value: number): void {
+    this.tyapk.patchValue(value);
+  }
 }

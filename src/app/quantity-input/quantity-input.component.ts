@@ -17,6 +17,8 @@ export class QuantityInputComponent implements ControlValueAccessor {
   private onTouched = () => {};
 
   registerOnChange(fn: any) {
+    // сохранить функцию, через которую сообщать Angular
+    // об изменении значения внутри компонента
     this.onChange = fn;
   }
 
@@ -26,6 +28,7 @@ export class QuantityInputComponent implements ControlValueAccessor {
 
   writeValue(outsideValue: number) {
     // получить из Forms API
+    // без этого не сработает set 27
     this.value = outsideValue;
   }
 
